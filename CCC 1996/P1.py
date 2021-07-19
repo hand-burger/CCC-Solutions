@@ -1,9 +1,9 @@
-inn = '/Users/jack/Documents/CCC/CCC 1996/dpa.in'
-outt = '/Users/jack/Documents/CCC/CCC 1996/dpa.out'
+inn = '/Users/jack/Documents/CCC-Solutions/CCC 1996/dpa.in'
+outt = '/Users/jack/Documents/CCC-Solutions/CCC 1996/dpa.out'
 
 # Open the files for reading and writing purposes
 fin = open(inn)
-fout = open(outt)
+fout = open(outt, 'w')
 
 # Initialize as 1 because n/n = 1
 summ = 1
@@ -30,10 +30,13 @@ for i in range(0, len(nums)):
         if nums[i] % j == 0 and nums[i] / j != nums[i]:
             summ += (nums[i] / j)
     if summ == nums[i]:
+        fout.write(str(nums[i]) + ' is a perfect number.\n')
         print(str(nums[i]) + ' is a perfect number.')
     elif summ < nums[i]:
+        fout.write(str(nums[i]) + ' is a deficient number.\n')
         print(str(nums[i]) + ' is a deficient number.')
     else:
+        fout.write(str(nums[i]) + ' is an abundant number.\n')
         print(str(nums[i]) + ' is an abundant number.')
 
 fin.close()
