@@ -1,10 +1,8 @@
-#Simply get input and compare
+#Simply get input, sort and get the middle one
 
-weight1, weight2, weight3 = input().split()
+w1 = int(input())
+w2 = int(input())
+w3 = int(input())
+listt = sorted([w1,w2,w3])
 
-if(weight1 <= weight2 and weight1 >= weight3 or weight1 <= weight3 and weight1 >= weight2):
-    print(weight1)
-elif(weight2 <= weight1 and weight2 >= weight3 or weight2 <= weight3 and weight2 >= weight1):
-    print(weight2)
-else:
-    print(weight3)
+print(listt[1])
