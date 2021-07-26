@@ -7,6 +7,6 @@ first = ''.join(first.split())
 second = ''.join(second.split())
 
 if(sorted(first) == sorted(second)):
-    print('Is an anagram')
+    print('Is an anagram.')
 else:
-    print('Is not an anagram')
+    print('Is not an anagram.')
