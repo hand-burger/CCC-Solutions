@@ -28,7 +28,11 @@ for i in range(0, int(firstLine)):
         obs[i] = fin.readline().strip()
 
     # Simple triple loop
-    for j in range(0, int(subjects)):
-        for k in range(0, int(verbs)):
-            for m in range(0, int(objects)):
-                print(subs[j] + ' ' + vebs[k] + ' ' + obs[m] + '.')
+    for i in range(0, int(subjects)):
+        for j in range(0, int(verbs)):
+            for k in range(0, int(objects)):
+                print(subs[i] + ' ' + vebs[j] + ' ' + obs[k] + '.')
+                fout.write(subs[i] + ' ' + vebs[j] + ' ' + obs[k] + '.\n')
+
+fin.close()
+fout.close()
