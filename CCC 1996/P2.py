@@ -41,10 +41,10 @@ for i in range(0, len(nums)):
         else:
             # Checks for when it is two digits
             if nums[i] == 11:
-                print('The number ' + str(number) + ' is divisible by 11.')
+                print('The number', number, 'is divisible by 11.')
                 fout.write('The number ' + str(number) + ' is divisible by 11.\n\n')
             else:
-                print('The number ' + str(number) + ' is not divisible by 11')
+                print('The number', number, 'is not divisible by 11')
                 fout.write('The number ' + str(number) + ' is not divisible by 11\n\n')
 
 # Close files

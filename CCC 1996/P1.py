@@ -31,13 +31,13 @@ for i in range(0, len(nums)):
             summ += (nums[i] / j)
     if summ == nums[i]:
         fout.write(str(nums[i]) + ' is a perfect number.\n')
-        print(str(nums[i]) + ' is a perfect number.')
+        print(nums[i], 'is a perfect number.')
     elif summ < nums[i]:
         fout.write(str(nums[i]) + ' is a deficient number.\n')
-        print(str(nums[i]) + ' is a deficient number.')
+        print(nums[i], 'is a deficient number.')
     else:
         fout.write(str(nums[i]) + ' is an abundant number.\n')
-        print(str(nums[i]) + ' is an abundant number.')
+        print(nums[i], 'is an abundant number.')
 
 fin.close()
 fout.close()

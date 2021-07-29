@@ -32,7 +32,7 @@ for i in range(0, int(firstLine)):
                 j -= 1
         if j > i and j - i > m:
             m = j - i
-    print('The maximum distance is ' + str(m))
+    print('The maximum distance is', m)
     fout.write('The maximum distance is ' + str(m) + '\n')
 
 fin.close()
