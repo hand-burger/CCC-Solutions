@@ -43,10 +43,10 @@ for i in nums:
             else:
                 pointer += 1
     if nasty:
-        print(str(i) + ' is nasty')
+        print(i, 'is nasty')
         fout.write(str(i) + ' is nasty\n')
     else:
-        print(str(i) + ' is not nasty')
+        print(i, 'is not nasty')
         fout.write(str(i) + ' is not nasty\n')
 
 fin.close()
