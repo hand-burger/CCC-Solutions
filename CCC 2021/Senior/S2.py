@@ -1,3 +1,4 @@
+# zecookiez
 rows = [0] * int(input())
 cols = [0] * int(input())
 
