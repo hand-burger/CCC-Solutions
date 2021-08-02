@@ -1,5 +1,10 @@
-inn = '/Users/jack/Documents/CCC-Solutions/CCC 1997/sent.in'
-outt = '/Users/jack/Documents/CCC-Solutions/CCC 1997/sent.out'
+import os
+# os is only used for finding a dynamic absolute path to the I/O files
+
+absolute_path = os.path.dirname(os.path.abspath(__file__))
+
+inn = absolute_path + '/sent.in'
+outt = absolute_path + '/sent.out'
 
 # Open the files for reading and writing purposes
 fin = open(inn)
@@ -20,14 +25,14 @@ for i in range(0, int(firstLine)):
     obs = [None] * int(objects)
 
     # Load arrays
-    for i in range(0, int(subjects)):
+    for i in range(int(subjects)):
         subs[i] = fin.readline().strip()
-    for i in range(0, int(verbs)):
+    for i in range(int(verbs)):
         vebs[i] = fin.readline().strip()
-    for i in range(0, int(objects)):
+    for i in range(int(objects)):
         obs[i] = fin.readline().strip()
 
-    # Simple triple loop
+    # Simple triple for loop
     for i in range(0, int(subjects)):
         for j in range(0, int(verbs)):
             for k in range(0, int(objects)):

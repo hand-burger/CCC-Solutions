@@ -1,5 +1,10 @@
-inn = '/Users/jack/Documents/CCC-Solutions/CCC 1997/ddc.in'
-outt = '/Users/jack/Documents/CCC-Solutions/CCC 1997/ddc.out'
+import os
+# os is only used for finding a dynamic absolute path to the I/O files
+
+absolute_path = os.path.dirname(os.path.abspath(__file__))
+
+inn = absolute_path + '/ddc.in'
+outt = absolute_path + '/ddc.out'
 
 # Open files
 fin = open(inn)

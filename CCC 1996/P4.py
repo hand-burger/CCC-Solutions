@@ -1,5 +1,10 @@
-inn = '/Users/jack/Documents/CCC-Solutions/CCC 1996/rom.in'
-outt = '/Users/jack/Documents/CCC-Solutions/CCC 1996/rom.out'
+import os
+# os is only used for finding a dynamic absolute path to the I/O files
+
+absolute_path = os.path.dirname(os.path.abspath(__file__))
+
+inn = absolute_path + '/rom.in'
+outt = absolute_path + '/rom.out'
 
 # Open input files
 fin = open(inn)
@@ -12,19 +17,19 @@ firstLine = fin.readlines()
 nums = [None] * int(firstLine[0])
 
 # Load array with values
-for i in range(0, len(nums)):
+for i in range(len(nums)):
     nums[i] = str(firstLine[i + 1]).strip()
 
-# Iterate through each equation
-for i in range(0, len(nums)):
-    # Reset values after each iteration of equation
+# Loop through each equation
+for i in range(len(nums)):
+    # Init/reset values after each iteration of equation
     romanValue = 0
     first = 0
     second = 0
     print(nums[i], end='')
     fout.write(nums[i])
-    # Iterate through each character of the equation
-    for j in range(0, len(nums[i])):
+    # Loop through each character of the equation
+    for j in range(len(nums[i])):
         # Get sum
         romanSum = first + second
         currentChar = nums[i][j]

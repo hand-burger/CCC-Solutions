@@ -7,8 +7,13 @@
 # Find the last 10 and repeat, (1010 -> 1001)
 # Then do it until you can't do it anymore (Essentially when all the ones are on the right)
 
-inn = '/Users/jack/Documents/CCC-Solutions/CCC 1996/pat.in'
-outt = '/Users/jack/Documents/CCC-Solutions/CCC 1996/pat.out'
+import os
+# os is only used for finding a dynamic absolute path to the I/O files
+
+absolute_path = os.path.dirname(os.path.abspath(__file__))
+
+inn = absolute_path + '/pat.in'
+outt = absolute_path + '/pat.out'
 
 # Open input files
 fin = open(inn)
@@ -21,7 +26,7 @@ firstLine = fin.readlines()
 nums = [[None] * 2] * int(firstLine[0])
 
 # Load array with values
-for i in range(0, len(nums)):
+for i in range(len(nums)):
     nums[i] = str(firstLine[i + 1]).split()
 
 # Convert string array to int
@@ -30,16 +35,16 @@ nums = [list( map(int,i) ) for i in nums]
 # Init bit patterns
 bitPatterns = ""
 
-for i in range(0, len(nums)):
+for i in range(len(nums)):
     print('\nThe bit patterns are\n')
     fout.write('\nThe bit patterns are\n')
     n = nums[i][0]
     k = nums[i][1]
     bitPatterns = ''
     # Put 1's and 0's into the bitPatterns string
-    for i in range(0, k):
+    for i in range(k):
         bitPatterns += '1'
-    for i in range(0, n-k):
+    for i in range(n-k):
         bitPatterns += '0'
 
     # Initial print of the string

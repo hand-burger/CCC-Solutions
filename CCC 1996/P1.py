@@ -1,12 +1,14 @@
-inn = '/Users/jack/Documents/CCC-Solutions/CCC 1996/dpa.in'
-outt = '/Users/jack/Documents/CCC-Solutions/CCC 1996/dpa.out'
+import os
+# os is only used for finding a dynamic absolute path to the I/O files
 
-# Open the files for reading and writing purposes
+absolute_path = os.path.dirname(os.path.abspath(__file__))
+
+inn = absolute_path + '/dpa.in'
+outt = absolute_path + '/dpa.out'
+
 fin = open(inn)
 fout = open(outt, 'w')
 
-# Initialize as 1 because n/n = 1
-summ = 1
 
 # Get first line for array size
 firstLine = fin.readlines()
@@ -14,16 +16,14 @@ firstLine = fin.readlines()
 # Create array size of numbers in file
 nums = [None] * int(firstLine[0])
 
+summ = 1
 # Load array with values
-for i in range(0, len(nums)):
+for i in range(len(nums)):
     nums[i] = int(firstLine[i + 1])
 
 # Now get sum of n's divisors
-for i in range(0, len(nums)):
-    # When it has finished with one number and found the sum of divisors summ is resest to 0
-    if i == len(nums):
-        summ = 0
-    # Summ is then reset to the default value of 1
+for i in range(len(nums)):
+    # Summ is reset to the default value of 1
     summ = 1
     for j in range(1, nums[i]):
         # If nums[i] / 1 cleanly divides and is not equal to nums[i]

@@ -3,9 +3,13 @@
 # Store that value
 # Subtract it from the number, divide by 10, and subtract it again
 
-# Input and output files
-inn = '/Users/jack/Documents/CCC-Solutions/CCC 1996/div.in'
-outt = '/Users/jack/Documents/CCC-Solutions/CCC 1996/div.out'
+import os
+# os is only used for finding a dynamic absolute path to the I/O files
+
+absolute_path = os.path.dirname(os.path.abspath(__file__))
+
+inn = absolute_path + '/div.in'
+outt = absolute_path + '/div.out'
 
 # Open files
 fin = open(inn)
@@ -18,18 +22,18 @@ firstLine = fin.readlines()
 nums = [None] * int(firstLine[0])
 
 # Load array with values
-for i in range(0, len(nums)):
+for i in range(len(nums)):
     nums[i] = int(firstLine[i + 1])
 
 # Loop through all numbers from input
-for i in range(0, len(nums)):
+for i in range(len(nums)):
     # Hold onto the initial number for printing later
     number = nums[i]
     print(nums[i])
     fout.write(str(nums[i]) + '\n')
     # Loop through all steps of each number
     # len(str(nums[i])) - 1) because the amount of times it does the algorithm is equal to the amount of digits in the number - 1
-    for j in range(0, len(str(nums[i])) - 1):
+    for j in range(len(str(nums[i])) - 1):
         # Ensure the number has more than two digits
         if nums[i] / 10 >= 10:
             # Get last digit of number
@@ -47,6 +51,5 @@ for i in range(0, len(nums)):
                 print('The number', number, 'is not divisible by 11')
                 fout.write('The number ' + str(number) + ' is not divisible by 11\n\n')
 
-# Close files
 fin.close()
 fout.close()
