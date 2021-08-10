@@ -6,3 +6,5 @@ All Past Contests are available <a href='https://www.cemc.uwaterloo.ca/contests/
 As of now (07/2021), a vast majority of the solutions are blank python files. I've finished 2007 junior solutions and I'm almost done 1996.
 
 Unless I continue this over the Grade 12 school year, chances are this will never be finished, but oh well.
+
+I'm bored of this now, I think I'm done for now (08/10/21)
