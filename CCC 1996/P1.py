@@ -9,7 +9,6 @@ outt = absolute_path + '/dpa.out'
 fin = open(inn)
 fout = open(outt, 'w')
 
-
 # Get first line for array size
 firstLine = fin.readlines()
 
