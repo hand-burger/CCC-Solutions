@@ -21,6 +21,8 @@ while number_of_quarters > 0:
     if first_machine_plays == 35:
         first_machine_plays = 0
         number_of_quarters += 30
+    if number_of_quarters == 0:
+        break
 
     number_of_quarters -= 1
     current_turn += 1
@@ -28,6 +30,8 @@ while number_of_quarters > 0:
     if second_machine_plays == 100:
         second_machine_plays = 0
         number_of_quarters += 60
+    if number_of_quarters == 0:
+        break
     
     number_of_quarters -= 1
     current_turn += 1
@@ -35,5 +39,7 @@ while number_of_quarters > 0:
     if third_machine_plays == 10:
         third_machine_plays = 0
         number_of_quarters += 9
+    if number_of_quarters == 0:
+        break
 
 print('Martha plays', current_turn, 'times before going broke.')
