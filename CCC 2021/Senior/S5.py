@@ -3,15 +3,15 @@ from sys import stdin
 from collections import defaultdict
 from math import gcd
 input = stdin.readline
-GI = lambda: int(input())
-gi = lambda: list(map(int, input().split()))
+def GI(): return int(input())
+def gi(): return list(map(int, input().split()))
 
 # My approach:
-#   If a subarray has GCD of x, then try setting all [L, R] as x 
+#   If a subarray has GCD of x, then try setting all [L, R] as x
 #   For every index, it should be LCM of all intervals present
 #   I did this using line sweep by index, keeping track of the GCDs using a dictionary
 #   Since x <= 16, we can use O(16) LCM calculation
-#   Finally, the array is impossible if GCD(L..R) != X, which I used a sparse table to obtain the GCD 
+#   Finally, the array is impossible if GCD(L..R) != X, which I used a sparse table to obtain the GCD
 
 
 N, M = gi()
@@ -25,7 +25,9 @@ for i in range(M):
     arr[r + 1].append((1, g))
     queries.append((l, r, g))
 
-lcm = lambda a, b: a * b // gcd(a, b)
+
+def lcm(a, b): return a * b // gcd(a, b)
+
 
 current = defaultdict(int)
 output = []
@@ -50,13 +52,15 @@ while i * 2 <= n:
     sparse.append([gcd(prev[j], prev[j + i]) for j in range(n - i * 2 + 1)])
     i *= 2
 
+
 def query(L, R):
     d = (R - L).bit_length() - 1
     return gcd(sparse[d][L], sparse[d][R - (1 << d)])
 
+
 for l, r, g in queries:
     if query(l, r + 1) != g:
         print("Impossible")
-        break 
+        break
 else:
     print(" ".join(map(str, output)))
