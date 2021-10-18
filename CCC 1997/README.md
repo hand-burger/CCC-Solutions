@@ -1,6 +1,6 @@
 # Guide
 
-### P1: [Sentences](P1.py)
+### P1: [Sentences ](P1.py)
 
 ### P2: [Nasty Numbers](P2.py)
 
