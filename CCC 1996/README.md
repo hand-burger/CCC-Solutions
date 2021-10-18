@@ -1,6 +1,6 @@
 # Guide
 
-### P1: [Deficient, Perfect, and Abundant](P1.py)
+### P1: [Deficient, Perfect and Abundant](P1.py)
 
 ### P2: [Divisibility by 11](P2.py)
 
