@@ -30,7 +30,7 @@ for i in range(len(nums)):
     nums[i] = str(firstLine[i + 1]).split()
 
 # Convert string array to int
-nums = [list( map(int,i) ) for i in nums]
+nums = [list(map(int, i)) for i in nums]
 
 # Init bit patterns
 bitPatterns = ""
@@ -50,7 +50,7 @@ for i in range(len(nums)):
     # Initial print of the string
     print(bitPatterns)
     fout.write(bitPatterns + '\n')
-    
+
     # When a trailing '10' is found in the string
     ten = bitPatterns.rfind('10')
 
