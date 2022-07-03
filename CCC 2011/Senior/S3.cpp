@@ -14,7 +14,6 @@ int crystalArray[5][5] = {
 
 bool crystal(int magnificationLevel, int xPos, int yPos)
 {
-
     // Grid size is 5^magnificationLevel
     int checkX, checkY;
     checkX = xPos / pow(5, magnificationLevel - 1);
